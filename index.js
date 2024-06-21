@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
-import { conectarDB } from "./backend/database/conexion.js";
-import { ModeloAdmin } from "./backend/database/modelo/modeloadm.js";
-import { ModeloCliente } from "./backend/database/modelo/modelocliente.js";
+import { conectarDB } from "./database/conexion.js";
+import { ModeloAdmin } from "./database/modelo/modeloadm.js";
+import { ModeloCliente } from "./database/modelo/modelocliente.js";
 
 const app = express();
 const port = 3000;
