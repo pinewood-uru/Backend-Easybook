@@ -3,7 +3,7 @@ import { Schema, model } from "mongoose";
 const schemaCliente = new Schema({
     id: {type: Number, unique: true},
     nombre: String,
-    tipo: String,
+    apellido: String,
     horario: String,
 })
 

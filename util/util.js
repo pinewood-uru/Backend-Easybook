@@ -5,6 +5,6 @@ export const formatearFiltrosDB = (valor) => valor ? new RegExp(valor, "gi") : u
 // La función toma un modelo como parámetro. Utiliza el modelo para encontrar el último documento en la colección, ordenado por el campo id en orden descendente. Si se encuentra un documento, devuelve el id del documento más uno. Si no se encuentra ningún documento, devuelve 1.
 
 export const obtenerProximoId = async (modelo) => {
-    const ultimoId =await modelo.findOne().sort("-id").exec();
-    return ultimoId ? ultimoId.id +1 :1;
-}
+    const ultimoId = await modelo.findOne().sort("-id").exec();
+    return ultimoId ? (ultimoId.id + 1) : 1;
+};
