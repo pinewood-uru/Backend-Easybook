@@ -12,7 +12,7 @@ import { deleteCliente } from "./controllers/deletecliente.js";
 
 import { postAdmin } from "./controllers/postadmin.js";
 import { loginAdmin } from "./controllers/loginadmin.js";
-import { logoutAdmin } from "./controllers/logoutAdmin.js";
+// import { logoutAdmin } from "./controllers/logoutAdmin.js";
 
 
 import { mostrarDatos } from "./middlewares/mostrarDatos.js";
