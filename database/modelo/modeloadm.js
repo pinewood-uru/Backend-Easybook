@@ -2,8 +2,8 @@ import { Schema, model } from "mongoose";
 
 const schemaAdmin = new Schema({
     id: { type: Number, unique: true },
-    nombre: String,
-    apellido: String,
+    restaurante: String,
+    sucursal: String,
     email: { type: String, unique: true },
     password: String,
     session: String,

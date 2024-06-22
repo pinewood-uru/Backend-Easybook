@@ -5,6 +5,7 @@ const schemaCliente = new Schema({
     nombre: String,
     apellido: String,
     horario: String,
+    personas: String,
 })
 
 export const ModeloCliente = model("Cliente", schemaCliente)    
