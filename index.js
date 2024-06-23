@@ -12,7 +12,10 @@ import { deleteCliente } from "./controllers/deletecliente.js";
 
 import { postAdmin } from "./controllers/postadmin.js";
 import { loginAdmin } from "./controllers/loginadmin.js";
+import { getAdmins } from "./controllers/getAdmins.js";
 // import { logoutAdmin } from "./controllers/logoutAdmin.js";
+
+import { controlarSession } from "./middlewares/controlarsession.js";
 
 
 import { mostrarDatos } from "./middlewares/mostrarDatos.js";
@@ -24,17 +27,25 @@ app.use(express.json());
 app.use(cors());
 await conectarDB();
 
-// MIDDLEWARE > DATOS
+// MIDDLEWARE > DATOS --> En cada llamada para por el middleware para poder verlo en consola
 app.use(mostrarDatos)
 
+
+// 1° Endpoint
 app.get("/", (req, res) => {
     res.send("Api Reservas Easybook");
 })
 
+
+// Administrador 
 app.post("/registroadmin", postAdmin)
 app.post("/loginadmin", loginAdmin)
+app.get("/administradores", getAdmins)
+
+app.use(controlarSession)
 
 
+// Clientes
 app.get("/clientes", getClientes)
 app.get("/cliente/:id", getClientebyID)
 app.post("/nuevocliente", postCliente)
