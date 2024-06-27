@@ -13,9 +13,10 @@ import { deleteCliente } from "./controllers/deletecliente.js";
 import { postAdmin } from "./controllers/postadmin.js";
 import { loginAdmin } from "./controllers/loginadmin.js";
 import { getAdmins } from "./controllers/getAdmins.js";
-// import { logoutAdmin } from "./controllers/logoutAdmin.js";
-
+import { logoutAdmin } from "./controllers/logoutAdmin.js";
 import { controlarSession } from "./middlewares/controlarsession.js";
+
+
 
 
 import { mostrarDatos } from "./middlewares/mostrarDatos.js";
@@ -43,6 +44,8 @@ app.post("/loginadmin", loginAdmin)
 app.get("/administradores", getAdmins)
 
 app.use(controlarSession)
+
+app.post("/logoutadmin", logoutAdmin)
 
 
 // Clientes
