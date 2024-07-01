@@ -3,7 +3,6 @@ import {ModeloAdmin} from "../database/modelo/modeloadm.js";
 export const loginAdmin = async (req, res, next) => {
     const {email, password } = req.body;
     const admin = await ModeloAdmin.findOne({ email, password })
-
     if(admin){
         admin.session = Math.random().toString(36).slice(2);
         admin.save()
