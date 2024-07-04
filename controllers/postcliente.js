@@ -2,7 +2,7 @@ import { ModeloCliente } from "../database/modelo/modelocliente.js";
 import { obtenerProximoId } from "../util/util.js";
 
 export const postCliente =async (req, res, next)=>{
-    const {nombre, apellido, mail, celular, horario, personas} = req.body;
+    const {nombre, apellido, mail, celular, horario, personas, date} = req.body;
     const nuevoCliente = new ModeloCliente();
     nuevoCliente.id =await obtenerProximoId(ModeloCliente)
     nuevoCliente.nombre= nombre;
@@ -11,6 +11,8 @@ export const postCliente =async (req, res, next)=>{
     nuevoCliente.celular = celular;
     nuevoCliente.horario = horario; 
     nuevoCliente.personas = personas;
+    nuevoCliente.date = date;
+
       
 
     nuevoCliente.save()

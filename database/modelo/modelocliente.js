@@ -8,6 +8,7 @@ const schemaCliente = new Schema({
     celular: String,
     horario: String,
     personas: String,
+    date: Date,
 })
 
 export const ModeloCliente = model("Cliente", schemaCliente)    

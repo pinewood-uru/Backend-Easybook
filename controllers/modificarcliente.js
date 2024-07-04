@@ -2,7 +2,7 @@ import { ModeloCliente } from "../database/modelo/modelocliente.js";
 
 export const modificarCliente = (req, res, next) => {
     const idCliente = req.params.id;
-    const { nombre, apellido, horario, personas, email, celular } = req.body;
+    const { nombre, apellido, horario, personas, email, celular, date} = req.body;
 
     const datosNuevos = {};
 
@@ -12,6 +12,7 @@ export const modificarCliente = (req, res, next) => {
     if (personas) datosNuevos.personas = personas;
     if (email) datosNuevos.email = email;
     if (celular) datosNuevos.celular = celular;
+    if (date) datosNuevos.date = date;
 
     ModeloCliente.updateOne({ id: idCliente }, datosNuevos)
     .then((data) => {
