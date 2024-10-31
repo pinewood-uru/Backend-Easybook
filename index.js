@@ -39,15 +39,15 @@ app.get("/", (req, res) => {
 
 
 // Administrador 
-app.post("/registroadmin", postAdmin)
+
 app.post("/loginadmin", loginAdmin)
-app.get("/administradores", getAdmins)
+
 
 app.use(controlarSession)
 
 app.post("/logoutadmin", logoutAdmin)
-
-
+app.post("/registroadmin", postAdmin)
+app.get("/administradores", getAdmins)
 // Clientes
 app.get("/clientes", getClientes)
 app.get("/cliente/:id", getClientebyID)
